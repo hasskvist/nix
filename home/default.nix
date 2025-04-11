@@ -11,6 +11,7 @@
     ./gui
     ./git.nix
     ./neovim.nix
+    ./template.nix
   ];
   options.tob = {
     gui.enable = lib.options.mkEnableOption "gui";
