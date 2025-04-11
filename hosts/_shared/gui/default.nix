@@ -29,5 +29,8 @@
 
     # Enable uinput, if we want to do remapping
     hardware.uinput.enable = true;
+
+    # Enable unfree firmware
+    hardware.enableAllFirmware = true;
   };
 }
