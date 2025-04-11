@@ -15,6 +15,7 @@ in
     ./firewall.nix
     ./nix.nix
     ./template.nix
+    ./sudo.nix
     <home-manager/nixos> # import home-manager, requires home-manager channel
   ];
 
@@ -68,17 +69,6 @@ in
 
     # Enable iotop so we can monitor disk IO
     programs.iotop.enable = true;
-
-    # Configure sudo
-    security.sudo = {
-      enable = true;
-      extraConfig = ''
-        Defaults insults
-        Defaults pwfeedback
-        Defaults:%wheel env_keep += "XDG_RUNTIME_DIR"
-        Defaults:%wheel env_keep += "PATH"
-      '';
-    };
 
     # Configure usbguard
     # We allow all devices, but having usbguard running is a NiceToHave
