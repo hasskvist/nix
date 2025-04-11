@@ -16,10 +16,7 @@
   #networking.wireless.enable = true;
   #networking.wireless.networks.Printer.psk = "44:Hasskvist";
   networking.useNetworkd = true;
-  networking.bridges.br0.interfaces = [ 
-    #"enp0s20f0u9"
-    "enp55s0u2u4"
-  ];
+  networking.bridges.br0.interfaces = [ "enp55s0u2u4" ];
   networking.interfaces.br0.useDHCP = true;
   networking.interfaces.enp0s20f0u9.useDHCP = true;
   networking.interfaces.enp55s0u2u4.useDHCP = true;
@@ -43,7 +40,6 @@
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
 
-  networking.hostName = "hassnix"; # Define your hostname.
   networking.firewall.enable = false;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
