@@ -19,17 +19,25 @@ in
   };
 
   imports =
-    if hostname == "hplt" then
-      [
-        ./hosts/hplt
-      ]
-    else if hostname == "panel" then
-      [
-        ./hosts/panel
-      ]
-      ++ [
-        # shared modules
-      ]
-    else
-      builtins.throw "environment variable HOSTNAME must be set";
+    (
+      if hostname == "hplt" then
+        [
+          ./hosts/hplt
+          {
+            tob.gui.enable = true;
+          }
+        ]
+      else if hostname == "panel" then
+        [
+          ./hosts/panel
+          {
+            tob.gui.enable = true;
+          }
+        ]
+      else
+        builtins.throw "environment variable HOSTNAME must be set"
+    )
+    ++ [
+      ./hosts/_shared
+    ];
 }

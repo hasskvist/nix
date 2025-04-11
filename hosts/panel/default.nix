@@ -5,11 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
+  ];
 
   services.vscode-server.enable = true;
   services.vscode-server.enableFHS = true;
@@ -20,7 +20,10 @@
   networking.interfaces.br0.useDHCP = true;
   networking.interfaces.enp0s20f0u9.useDHCP = true;
   networking.interfaces.enp55s0u2u4.useDHCP = true;
-  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
+  networking.nameservers = [
+    "1.1.1.1"
+    "1.0.0.1"
+  ];
   systemd.services.libvirt-guest.serviceConfig.RestartSec = "10s";
   # Enable cron service
   services.cron = {
@@ -30,7 +33,10 @@
     ];
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -110,9 +116,12 @@
   users.users.admin = {
     isNormalUser = true;
     description = "admin";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -139,7 +148,7 @@
     viAlias = true;
   };
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     virt-manager
     waypipe
