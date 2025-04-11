@@ -31,6 +31,9 @@ in
     # Use latest kernel
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
+    # Enable sysstat logging
+    services.sysstat.enable = true;
+
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
