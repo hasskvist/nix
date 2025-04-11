@@ -52,4 +52,5 @@
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+  hardware.enableAllHardware = true;
 }
