@@ -37,6 +37,13 @@ in
     # Enable sysstat logging
     services.sysstat.enable = true;
 
+    # Configure earlyoom service that kills processes when we need to
+    # reclaim memory (RAM)
+    services.earlyoom = {
+      enable = true;
+      enableNotifications = true;
+    };
+
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
