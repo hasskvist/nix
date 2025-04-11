@@ -35,6 +35,10 @@ in
     # Enable sysstat logging
     services.sysstat.enable = true;
 
+    # Enable fstrim. TRIM zeroes out unused blocks on your SSD which helps
+    # the wear-leveling feature keep your SSD alive.
+    services.fstrim.enable = true;
+
     # Configure earlyoom service that kills processes when we need to
     # reclaim memory (RAM)
     services.earlyoom = {
