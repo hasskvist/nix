@@ -21,6 +21,7 @@
       rerere.enable = true;
       tag.sort = "version:refname";
       trim.bases = "master,main,develop";
+      safe.directory = [ "/etc/nixos" ];
     };
   };
 }
