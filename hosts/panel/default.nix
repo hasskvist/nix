@@ -8,8 +8,10 @@ let
 in
 {
   imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    ./hardware-configuration.nix # Include the results of the hardware scan.
+    <nixos-hardware/common/cpu/intel/kaby-lake> # hardware quirks
+    <nixos-hardware/common/gpu/intel/kaby-lake> # hardware quirks
+    <nixos-hardware/common/pc/ssd> # ssd config
     (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
   ];
 
