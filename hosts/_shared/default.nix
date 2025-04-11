@@ -40,6 +40,9 @@ in
     # the wear-leveling feature keep your SSD alive.
     services.fstrim.enable = true;
 
+    # Enable nix-ld, a magical runtime linker
+    programs.nix-ld.enable = true;
+
     # Configure earlyoom service that kills processes when we need to
     # reclaim memory (RAM) in case we run out of it.
     services.earlyoom = {
