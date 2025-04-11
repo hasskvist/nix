@@ -74,7 +74,8 @@ in
     # $ nix search wget
     environment.systemPackages = with pkgs; [
       # Enter package names here
-      dmidecode
+      dmidecode # hardware info
+      waypipe # wayland over SSH
     ];
 
     # Some programs need SUID wrappers, can be configured further or are
