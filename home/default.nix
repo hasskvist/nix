@@ -45,6 +45,7 @@
       enable = true;
     };
     programs.gitui.enable = true;
+    programs.fd.enable = true;
     xdg = {
       enable = true;
       #portal.enable = true;
