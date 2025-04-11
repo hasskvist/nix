@@ -13,6 +13,7 @@ in
     ./users.nix
     ./locale.nix
     ./firewall.nix
+    ./nix.nix
     ./template.nix
     <home-manager/nixos> # import home-manager, requires home-manager channel
   ];
@@ -22,9 +23,6 @@ in
   };
 
   config = {
-    # Allow unfree packages
-    nixpkgs.config.allowUnfree = true;
-
     # Don't install the /lib/ld-linux.so.2 stub. This saves one instance of nixpkgs (maybe?)
     environment.ldso32 = null;
 
@@ -60,13 +58,6 @@ in
       alsa.support32Bit = true;
       pulse.enable = true;
     };
-
-    # Enable nix command and flakes.
-    # We don't use flakes right now but support for it is nice to have.
-    nix.settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
 
     # Enable fish shell so we can use it as login shell
     programs.fish.enable = true;
