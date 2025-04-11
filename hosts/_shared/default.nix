@@ -44,6 +44,8 @@ in
       enableNotifications = true;
     };
 
+    # Get notifications from the system bus
+    services.systembus-notify.enable = true;
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
