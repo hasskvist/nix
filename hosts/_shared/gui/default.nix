@@ -2,6 +2,7 @@
 {
   imports = [
     ./kde.nix
+    ./fonts.nix
     ./template.nix
   ];
   config = lib.mkIf config.tob.gui.enable {
