@@ -25,6 +25,9 @@ in
 
     # Don't install the /lib/ld-linux.so.2 stub. This saves one instance of nixpkgs (maybe?)
     environment.ldso32 = null;
+
+    environment.enableAllTerminfo = true; # This installs a lot of terminals
+
     # Use latest kernel
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
