@@ -24,7 +24,7 @@ in
     nixpkgs.config.allowUnfree = true;
 
     # Use latest kernel
-    boot.kernelPackages = pkgs.linuxKernel.packages.linux_latest;
+    boot.kernelPackages = pkgs.linuxPackages_latest;
 
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
