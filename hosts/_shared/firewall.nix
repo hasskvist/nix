@@ -13,7 +13,7 @@ in
   config = lib.mkIf cfg.enable {
     # Enable firewall, example for how to open ports
     networking.firewall = {
-      enable = true;
+      enable = lib.mkDefault true;
       allowedTCPPorts = [
         #22
       ];
