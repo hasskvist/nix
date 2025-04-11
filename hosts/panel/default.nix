@@ -3,7 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
+let
+  ethIfName = "enp55s0u2u4";
+in
 {
   imports = [
     # Include the results of the hardware scan.
@@ -14,10 +16,9 @@
   services.vscode-server.enable = true;
   services.vscode-server.enableFHS = true;
   networking.useNetworkd = true;
-  networking.bridges.br0.interfaces = [ "enp55s0u2u4" ];
+  networking.bridges.br0.interfaces = [ ethIfName ];
   networking.interfaces.br0.useDHCP = true;
-  networking.interfaces.enp0s20f0u9.useDHCP = true;
-  networking.interfaces.enp55s0u2u4.useDHCP = true;
+  networking.interfaces.${ethIfName}.useDHCP = true;
   networking.nameservers = [ "9.9.9.9" ];
   systemd.services.libvirt-guest.serviceConfig.RestartSec = "10s";
   # Enable cron service
