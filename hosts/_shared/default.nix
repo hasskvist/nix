@@ -40,7 +40,7 @@ in
     services.fstrim.enable = true;
 
     # Configure earlyoom service that kills processes when we need to
-    # reclaim memory (RAM)
+    # reclaim memory (RAM) in case we run out of it.
     services.earlyoom = {
       enable = true;
       enableNotifications = true;
@@ -89,6 +89,10 @@ in
       IPCAllowedUsers = [ "tobias" ];
       IPCAllowedGroups = [ "wheel" ];
     };
+
+    # Enable udisks service, this allows you to manage external disks through
+    # GUI applications easily.
+    services.udisks2.enable = true;
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
