@@ -13,17 +13,12 @@
 
   services.vscode-server.enable = true;
   services.vscode-server.enableFHS = true;
-  #networking.wireless.enable = true;
-  #networking.wireless.networks.Printer.psk = "44:Hasskvist";
   networking.useNetworkd = true;
   networking.bridges.br0.interfaces = [ "enp55s0u2u4" ];
   networking.interfaces.br0.useDHCP = true;
   networking.interfaces.enp0s20f0u9.useDHCP = true;
   networking.interfaces.enp55s0u2u4.useDHCP = true;
-  networking.nameservers = [
-    "1.1.1.1"
-    "1.0.0.1"
-  ];
+  networking.nameservers = [ "9.9.9.9" ];
   systemd.services.libvirt-guest.serviceConfig.RestartSec = "10s";
   # Enable cron service
   services.cron = {
@@ -36,12 +31,17 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Enable libvirt for hosting virtual machines
   virtualisation.libvirtd.enable = true;
+
+  # Disable all power-saveing states
   systemd.targets.suspend.enable = false;
   systemd.targets.sleep.enable = false;
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
 
+  # Disable firewall
   networking.firewall.enable = false;
 
   # Enable networking
