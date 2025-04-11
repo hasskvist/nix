@@ -27,6 +27,7 @@
       nil # Nix Language Server
       nixfmt-rfc-style # Nix code formatter
       tmate # tmux fork for sharing terminal sessions
+      home-assistant-cli # CLI tool for home-assistant
     ];
     programs.bash.enable = true;
     programs.fish = {
