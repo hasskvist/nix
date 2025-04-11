@@ -29,7 +29,7 @@ in
     environment.ldso32 = null;
 
     # This installs a lot of terminals
-    environment.enableAllTerminfo = true; 
+    environment.enableAllTerminfo = true;
 
     # Use latest kernel
     boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -46,9 +46,14 @@ in
 
     # Get notifications from the system bus
     services.systembus-notify.enable = true;
+
     # Enable sound with pipewire.
     services.pulseaudio.enable = false;
+
+    # Enable realtime processing
     security.rtkit.enable = true;
+
+    # Configure pipewire audio server
     services.pipewire = {
       enable = true;
       alsa.enable = true;
@@ -56,14 +61,20 @@ in
       pulse.enable = true;
     };
 
+    # Enable nix command and flakes.
+    # We don't use flakes right now but support for it is nice to have.
     nix.settings.experimental-features = [
       "nix-command"
       "flakes"
     ];
 
+    # Enable fish shell so we can use it as login shell
     programs.fish.enable = true;
+
+    # Enable iotop so we can monitor disk IO
     programs.iotop.enable = true;
 
+    # Configure sudo
     security.sudo = {
       enable = true;
       extraConfig = ''
@@ -74,6 +85,8 @@ in
       '';
     };
 
+    # Configure usbguard
+    # We allow all devices, but having usbguard running is a NiceToHave
     services.usbguard = {
       enable = true;
       dbus.enable = true;
@@ -84,14 +97,14 @@ in
 
     # List packages installed in system profile. To search, run:
     # $ nix search wget
+    # Or browse to https://search.nixos.org/packages?channel=unstable
     environment.systemPackages = with pkgs; [
       # Enter package names here
       dmidecode # hardware info
       waypipe # wayland over SSH
     ];
 
-    # Some programs need SUID wrappers, can be configured further or are
-    # started in user sessions.
+    # Enable mtr for tracerouting, this configures a SUID wrapper for mtr
     programs.mtr.enable = true;
 
     # Enable gnupg agent
