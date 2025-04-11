@@ -6,6 +6,7 @@
 
 {
   imports = [
+    ./facter.nix
     ./hardware-configuration.nix # Include the results of the hardware scan.
     <nixos-hardware/common/cpu/intel/skylake> # hardware quirks
     <nixos-hardware/common/gpu/intel/skylake> # hardware quirks
