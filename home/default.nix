@@ -11,6 +11,7 @@
     ./gui
     ./git.nix
     ./neovim.nix
+    ./helix.nix
     ./template.nix
   ];
   options.tob = {
