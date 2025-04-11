@@ -23,7 +23,10 @@
 
     # Installs packages into your user
     home.packages = with pkgs; [
-      wl-clipboard-rs
+      wl-clipboard-rs # Allow copying to clipboard from terminal
+      nil # Nix Language Server
+      nixfmt-rfc-style # Nix code formatter
+      tmate # tmux fork for sharing terminal sessions
     ];
     programs.bash.enable = true;
     programs.fish = {
