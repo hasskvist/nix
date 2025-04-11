@@ -14,11 +14,13 @@ in
     ./locale.nix
     ./firewall.nix
     ./template.nix
-    <home-manager/nixos> # import home-manager
+    <home-manager/nixos> # import home-manager, requires home-manager channel
   ];
+
   options.tob = {
     gui.enable = lib.options.mkEnableOption "gui";
   };
+
   config = {
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
@@ -26,7 +28,8 @@ in
     # Don't install the /lib/ld-linux.so.2 stub. This saves one instance of nixpkgs (maybe?)
     environment.ldso32 = null;
 
-    environment.enableAllTerminfo = true; # This installs a lot of terminals
+    # This installs a lot of terminals
+    environment.enableAllTerminfo = true; 
 
     # Use latest kernel
     boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -81,12 +84,12 @@ in
     # Some programs need SUID wrappers, can be configured further or are
     # started in user sessions.
     programs.mtr.enable = true;
+
+    # Enable gnupg agent
     programs.gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
     };
-
-    # List services that you want to enable:
 
     # Enable the OpenSSH daemon.
     services.openssh = {
