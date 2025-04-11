@@ -14,10 +14,16 @@
       "/share/applications"
     ];
 
+    # Enable flatpaks
     services.flatpak.enable = true;
+
+    # Enable XDG portals
     xdg.portal.enable = true;
 
-    programs.firefox.enable = true; # Install Firefox
-    programs.virt-manager.enable = true; # Install virt-manager with SUID wrappers
+    # Enable Firefox
+    programs.firefox.enable = true;
+
+    # Enable virt-manager
+    programs.virt-manager.enable = true;
   };
 }
