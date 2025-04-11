@@ -26,5 +26,8 @@
 
     # Enable virt-manager
     programs.virt-manager.enable = true;
+
+    # Enable uinput, if we want to do remapping
+    hardware.uinput.enable = true;
   };
 }
