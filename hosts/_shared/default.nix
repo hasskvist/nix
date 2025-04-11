@@ -50,6 +50,7 @@ in
     ];
 
     programs.fish.enable = true;
+    programs.iotop.enable = true;
 
     security.sudo = {
       enable = true;
