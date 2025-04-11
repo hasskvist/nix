@@ -13,6 +13,7 @@ let
   };
   home = nixos.config.home-manager.users.tobias;
 in
-nixos // {
+nixos
+// {
   inherit home;
 }
