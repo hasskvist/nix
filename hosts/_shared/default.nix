@@ -33,6 +33,8 @@ in
     # This installs a lot of terminals
     environment.enableAllTerminfo = true;
 
+    system.nixos.label = "unstable";
+
     # Use latest kernel
     boot.kernelPackages = pkgs.linuxPackages_latest;
 
