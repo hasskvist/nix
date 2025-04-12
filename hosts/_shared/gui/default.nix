@@ -27,6 +27,9 @@
     # Enable virt-manager
     programs.virt-manager.enable = true;
 
+    # Enable gvfs GIO virtual filesystem
+    services.gvfs.enable = true;
+
     # Enable uinput, if we want to do remapping
     hardware.uinput.enable = true;
 
