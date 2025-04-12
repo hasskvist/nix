@@ -14,6 +14,7 @@ in
       extraGroups = [
         "networkmanager"
         "wheel"
+        "pipewire"
       ];
       shell = config.programs.fish.package;
       packages = with pkgs; [

@@ -66,12 +66,13 @@ in
     # Configure pipewire audio server
     services.pipewire = {
       enable = true;
-      alsa.enable = true; # Required by: Audacity
-      jack.enable = true; # Required by: Qtractor
       pulse.enable = true;
       wireplumber.enable = true;
       socketActivation = true;
       systemWide = true;
+    };
+    environment.variables = {
+      PULSE_SERVER = "unix:/run/pulse/native";
     };
     # Enable fish shell so we can use it as login shell
     programs.fish.enable = true;

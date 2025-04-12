@@ -6,6 +6,7 @@
 {
   imports = [
     ./facter.nix
+    ./spotify.nix
     ./hardware-configuration.nix # Include the results of the hardware scan.
     "${npins.nixos-hardware}/common/cpu/intel/skylake" # hardware quirks
     "${npins.nixos-hardware}/common/gpu/intel/skylake" # hardware quirks
