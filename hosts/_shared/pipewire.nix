@@ -29,5 +29,6 @@ in
     };
     environment.variables = { inherit PULSE_SERVER; };
     environment.sessionVariables = { inherit PULSE_SERVER; };
+
   };
 }
