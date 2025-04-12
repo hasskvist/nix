@@ -14,10 +14,6 @@
     ./libinput.nix
     ./facter.nix
     ./hardware-configuration.nix # Include the results of the hardware scan.
-    "${npins.nixos-hardware}/common/cpu/intel/skylake" # hardware quirks
-    "${npins.nixos-hardware}/common/gpu/intel/skylake" # hardware quirks
-    "${npins.nixos-hardware}/common/pc/laptop" # laptop config
-    "${npins.nixos-hardware}/common/pc/ssd" # ssd config
   ];
   config = lib.mkIf config.tob.hplt.enable {
     # Bootloader.
