@@ -22,6 +22,7 @@
       lsof
       pulsemixer # Good tui pulse tool
       qpwgraph # pipewire patch-bay
+      udiskie # GUI tool for udisks2
     ];
   };
 }
