@@ -25,10 +25,14 @@ in
       pulse.enable = true;
       wireplumber.enable = true;
       socketActivation = true;
+      # Runs pipewire under pipewire user
+      # pipewire pulseaudio socket will be available at $PULSE_SERVER
+      # (/run/pulse/native) rather than (/run/user/1000/pulse/native)
       systemWide = true;
     };
+    # Configure PULSE_SERVER for shell environments
     environment.variables = { inherit PULSE_SERVER; };
-    environment.sessionVariables = { inherit PULSE_SERVER; };
-
+    # Configure PULSE_SERVER for systemd units
+    systemd.globalEnvironment = { inherit PULSE_SERVER; };
   };
 }
