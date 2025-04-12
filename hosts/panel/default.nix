@@ -8,6 +8,7 @@ let
 in
 {
   imports = [
+    ./facter.nix
     ./hardware-configuration.nix # Include the results of the hardware scan.
     "${npins.nixos-hardware}/common/cpu/intel/kaby-lake" # hardware quirks
     "${npins.nixos-hardware}/common/gpu/intel/kaby-lake" # hardware quirks
