@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, pkgs, config, ... }:
 let
   modName = "kde";
   cfg = config.tob.${modName};
@@ -13,11 +13,16 @@ in
   config = lib.mkIf cfg.enable {
     # Enable the X11 windowing system.
     # You can disable this if you're only using the Wayland session.
-    services.xserver.enable = true;
-
+    services.xserver.enable = false;
     # Enable the KDE Plasma Desktop Environment.
     services.displayManager.sddm.enable = true;
+    services.displayManager.sddm.wayland.enable = true;
+    services.displayManager.sddm.settings.General.DisplayServer = "wayland";
     services.desktopManager.plasma6.enable = true;
+    environment.plasma6.excludePackages = with pkgs.kdePackages; [
+      plasma-browser-integration
+      elisa
+    ];
     # Configure keymap in X11
     services.xserver.xkb = {
       layout = "se";
