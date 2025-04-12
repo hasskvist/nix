@@ -17,8 +17,6 @@ in
       enable = true;
       allowReboot = true;
     };
-    # Allow unfree packages
-    nixpkgs.config.allowUnfree = true;
 
     nix = {
       # Enable nix command and flakes.

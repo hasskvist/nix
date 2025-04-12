@@ -1,0 +1,50 @@
+{
+  "pins": {
+    "home-manager": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "home-manager"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "b74b22bb6167e8dff083ec6988c98798bf8954d3",
+      "url": "https://github.com/nix-community/home-manager/archive/b74b22bb6167e8dff083ec6988c98798bf8954d3.tar.gz",
+      "hash": "0vabn1zab071lwr1h55sp3b0dsv3jpdayxxd82sim6kw1y059259"
+    },
+    "nixos-facter-modules": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "nixos-facter-modules"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "58ad9691670d293a15221d4a78818e0088d2e086",
+      "url": "https://github.com/nix-community/nixos-facter-modules/archive/58ad9691670d293a15221d4a78818e0088d2e086.tar.gz",
+      "hash": "09cgh59si6pha8kvfgw4gi84bfm5mknk7yg2n1vv8wli9y1j5ipf"
+    },
+    "nixos-hardware": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nixos",
+        "repo": "nixos-hardware"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "1fe3cc2bc5d2dc9c81cb4e63d2f67c1543340df1",
+      "url": "https://github.com/nixos/nixos-hardware/archive/1fe3cc2bc5d2dc9c81cb4e63d2f67c1543340df1.tar.gz",
+      "hash": "1j10w1vls3pn1l82i5bbv0jac6xdmhbpwqhhviwpjg1bq75f3qis"
+    },
+    "nixos-unstable": {
+      "type": "Channel",
+      "name": "nixos-unstable",
+      "url": "https://releases.nixos.org/nixos/unstable/nixos-25.05pre781462.f675531bc7e6/nixexprs.tar.xz",
+      "hash": "1lxafasrxb4bn6pg8n9d6qlbs8yv7fnbchwplfr4idf551byl5iv"
+    }
+  },
+  "version": 5
+}

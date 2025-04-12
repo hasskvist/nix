@@ -1,7 +1,7 @@
-{ config, lib, ... }:
+{ config, lib, npins, ... }:
 {
   imports = [
-    <nixos-facter-modules/modules/nixos/facter.nix>
+    "${npins.nixos-facter-modules}/modules/nixos/facter.nix"
   ];
 
   config.facter.reportPath = ./facter.json;

@@ -31,6 +31,7 @@
       htop # Task manager
       btop # Other task manager
       fastfetch # System info tool
+      npins # nix dependency pinning tool
     ];
     programs.bash.enable = true;
     programs.fish = {

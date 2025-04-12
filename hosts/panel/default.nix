@@ -2,16 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, npins, ... }:
 let
   ethIfName = "enp55s0u2u4";
 in
 {
   imports = [
     ./hardware-configuration.nix # Include the results of the hardware scan.
-    <nixos-hardware/common/cpu/intel/kaby-lake> # hardware quirks
-    <nixos-hardware/common/gpu/intel/kaby-lake> # hardware quirks
-    <nixos-hardware/common/pc/ssd> # ssd config
+    "${npins.nixos-hardware}/common/cpu/intel/kaby-lake" # hardware quirks
+    "${npins.nixos-hardware}/common/gpu/intel/kaby-lake" # hardware quirks
+    "${npins.nixos-hardware}/common/pc/ssd" # ssd config
     (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
   ];
 

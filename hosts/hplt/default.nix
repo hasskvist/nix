@@ -2,16 +2,15 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-
+{ config, pkgs, npins, ... }:
 {
   imports = [
     ./facter.nix
     ./hardware-configuration.nix # Include the results of the hardware scan.
-    <nixos-hardware/common/cpu/intel/skylake> # hardware quirks
-    <nixos-hardware/common/gpu/intel/skylake> # hardware quirks
-    <nixos-hardware/common/pc/laptop> # laptop config
-    <nixos-hardware/common/pc/ssd> # ssd config
+    "${npins.nixos-hardware}/common/cpu/intel/skylake" # hardware quirks
+    "${npins.nixos-hardware}/common/gpu/intel/skylake" # hardware quirks
+    "${npins.nixos-hardware}/common/pc/laptop" # laptop config
+    "${npins.nixos-hardware}/common/pc/ssd" # ssd config
   ];
 
   # Bootloader.
