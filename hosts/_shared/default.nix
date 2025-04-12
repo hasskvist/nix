@@ -17,6 +17,7 @@ in
     ./nix.nix
     ./template.nix
     ./sudo.nix
+    ./pipewire.nix
     <home-manager/nixos> # import home-manager, requires home-manager channel
   ];
 
@@ -57,23 +58,6 @@ in
     # Get notifications from the system bus
     services.systembus-notify.enable = true;
 
-    # Enable sound with pipewire.
-    services.pulseaudio.enable = false;
-
-    # Enable realtime processing
-    security.rtkit.enable = true;
-
-    # Configure pipewire audio server
-    services.pipewire = {
-      enable = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
-      socketActivation = true;
-      systemWide = true;
-    };
-    environment.variables = {
-      PULSE_SERVER = "unix:/run/pulse/native";
-    };
     # Enable fish shell so we can use it as login shell
     programs.fish.enable = true;
 

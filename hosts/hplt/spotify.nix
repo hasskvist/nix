@@ -31,7 +31,6 @@ in
           zeroconf_port = 59382;
           use_mpris = false;
           backend = "pulseaudio";
-          #device = "pulse:server=/run/pulse/native";
         };
       };
     };
