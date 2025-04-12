@@ -3,6 +3,7 @@
   imports = [
     "${npins.nixos-facter-modules}/modules/nixos/facter.nix"
   ];
-
-  config.facter.reportPath = ./facter.json;
+  config = lib.mkIf config.tob.hplt.enable {
+    facter.reportPath = ./facter.json;
+  };
 }

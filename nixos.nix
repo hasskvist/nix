@@ -26,6 +26,8 @@ eval-config {
           {
             # Enable gui config
             tob.gui.enable = true;
+            # Enable hplt specific config
+            tob.hplt.enable = true;
           }
         ]
       else if hostname == "panel" then

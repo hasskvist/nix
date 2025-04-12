@@ -7,7 +7,7 @@ in
 {
   options.tob.${modName} = {
     enable = lib.mkOption {
-      default = true;
+      default = config.tob.hplt.enable;
       description = "Whether to enable ${modName}.";
     };
   };

@@ -24,6 +24,7 @@ in
 
   options.tob = {
     gui.enable = lib.options.mkEnableOption "gui";
+    hplt.enable = lib.options.mkEnableOption "hplt";
   };
 
   config = {
