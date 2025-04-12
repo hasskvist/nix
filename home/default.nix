@@ -28,6 +28,9 @@
       nixfmt-rfc-style # Nix code formatter
       tmate # tmux fork for sharing terminal sessions
       home-assistant-cli # CLI tool for home-assistant
+      htop # Task manager
+      btop # Other task manager
+      fastfetch # System info tool
     ];
     programs.bash.enable = true;
     programs.fish = {
