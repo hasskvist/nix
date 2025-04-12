@@ -12,20 +12,28 @@ in
     };
     tobias = {
       inherit hashedPassword;
+      # Run user units on startup
+      linger = true;
+      # Not a system user
       isNormalUser = true;
+      # Beautiful name
       description = "Tobias";
+      # Groups, to get permissions to do some things without privilege escalation
       extraGroups = [
         "networkmanager"
         "wheel"
         "pipewire"
       ];
+      # Use FISH shell instead of bash
       shell = config.programs.fish.package;
+      # Packages to add to the user (before home-manager)
       packages = with pkgs; [
         kdePackages.kate # Text editor
         google-chrome # Shitty web-browser
       ];
     };
   };
+  # Configure user/home config for user(s)
   home-manager = {
     # If a file exists that home-manager wants to write to we rename the existing
     # one with .hbak as extension.
