@@ -12,12 +12,6 @@ in
     };
   };
   config = lib.mkIf cfg.enable {
-    # Configure automatic upgrades
-    system.autoUpgrade = {
-      enable = true;
-      allowReboot = true;
-    };
-
     nix = {
       # Enable nix command and flakes.
       # We don't use flakes right now but support for it is nice to have.
