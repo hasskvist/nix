@@ -12,6 +12,7 @@
     ./git.nix
     ./neovim.nix
     ./helix.nix
+    ./packages.nix
     ./template.nix
   ];
   options.tob = {
@@ -20,22 +21,6 @@
   config = {
     # Inherit GUI option from NixOS
     tob.gui.enable = nixosConfig.tob.gui.enable;
-
-    # Installs packages into your user
-    home.packages = with pkgs; [
-      wl-clipboard-rs # Allow copying to clipboard from terminal
-      nil # Nix Language Server
-      nixfmt-rfc-style # Nix code formatter
-      tmate # tmux fork for sharing terminal sessions
-      home-assistant-cli # CLI tool for home-assistant
-      htop # Task manager
-      btop # Other task manager
-      fastfetch # System info tool
-      npins # nix dependency pinning tool
-      lsof
-      pulsemixer # Good tui pulse tool
-      qpwgraph # pipewire patch-bay
-    ];
 
     programs.bash.enable = true;
     programs.fish = {
