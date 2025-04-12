@@ -1,5 +1,5 @@
 let
-  nixos = import ./configuration.nix;
+  nixos = import ./nixos.nix;
   home = nixos.config.home-manager.users.tobias;
 in
 nixos
