@@ -20,7 +20,8 @@ in
     environment.systemPackages = with pkgs; [
       (pkgs.writeScriptBin "rebuild" ''
         #! ${pkgs.runtimeShell}
-         nixos-rebuild build --file /etc/nixos/nixos.nix --use-remote-sudo
+        sudo echo "sudoing"
+        nixos-rebuild switch --file /etc/nixos/nixos.nix --use-remote-sudo
       '')
     ];
   };
