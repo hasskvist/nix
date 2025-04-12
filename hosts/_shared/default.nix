@@ -51,6 +51,9 @@ in
     # FS that returns symlinks from FHS to nix store using magic and pixie dust
     services.envfs.enable = true;
 
+    # Enable firmware update utility
+    services.fwupd.enable = true;
+
     # Configure earlyoom service that kills processes when we need to
     # reclaim memory (RAM) in case we run out of it.
     services.earlyoom = {
