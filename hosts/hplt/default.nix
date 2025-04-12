@@ -10,6 +10,7 @@
 }:
 {
   imports = [
+    ./libinput.nix
     ./facter.nix
     ./hardware-configuration.nix # Include the results of the hardware scan.
     "${npins.nixos-hardware}/common/cpu/intel/skylake" # hardware quirks
