@@ -44,6 +44,19 @@
       "name": "nixos-unstable",
       "url": "https://releases.nixos.org/nixos/unstable/nixos-25.05pre781462.f675531bc7e6/nixexprs.tar.xz",
       "hash": "1lxafasrxb4bn6pg8n9d6qlbs8yv7fnbchwplfr4idf551byl5iv"
+    },
+    "nixos-vscode-server": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "nixos-vscode-server"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "8b6db451de46ecf9b4ab3d01ef76e59957ff549f",
+      "url": "https://github.com/nix-community/nixos-vscode-server/archive/8b6db451de46ecf9b4ab3d01ef76e59957ff549f.tar.gz",
+      "hash": "09j4kvsxw1d5dvnhbsgih0icbrxqv90nzf0b589rb5z6gnzwjnqf"
     }
   },
   "version": 5

@@ -13,7 +13,7 @@ in
     "${npins.nixos-hardware}/common/cpu/intel/kaby-lake" # hardware quirks
     "${npins.nixos-hardware}/common/gpu/intel/kaby-lake" # hardware quirks
     "${npins.nixos-hardware}/common/pc/ssd" # ssd config
-    (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
+    "${npins.nixos-vscode-server}" # import vscode-server modules
   ];
 
   services.vscode-server.enable = true;
