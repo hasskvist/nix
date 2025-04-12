@@ -17,6 +17,7 @@ in
     ./nix.nix
     ./template.nix
     ./sudo.nix
+    ./spotify.nix
     ./pipewire.nix
     <home-manager/nixos> # import home-manager, requires home-manager channel
   ];
