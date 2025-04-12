@@ -33,7 +33,10 @@
       fastfetch # System info tool
       npins # nix dependency pinning tool
       lsof
+      pulsemixer # Good tui pulse tool
+      qpwgraph # pipewire patch-bay
     ];
+
     programs.bash.enable = true;
     programs.fish = {
       enable = true;

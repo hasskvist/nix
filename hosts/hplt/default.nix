@@ -2,7 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, npins, ... }:
+{
+  config,
+  pkgs,
+  npins,
+  ...
+}:
 {
   imports = [
     ./facter.nix
@@ -12,21 +17,6 @@
     "${npins.nixos-hardware}/common/pc/laptop" # laptop config
     "${npins.nixos-hardware}/common/pc/ssd" # ssd config
   ];
-
-  services.pipewire = {
-    extraConfig.pipewire.libpipewire-module-rtp-sink = {
-      "context.modules" = [
-        {
-          name = "libpipewire-module-rtp-sink";
-          args = {
-            "node.description" = "RTP sink";
-            "media.name" = "RTP sink";
-            "source.port" = 46013;
-          };
-        }
-      ];
-    };
-  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

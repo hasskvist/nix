@@ -15,21 +15,6 @@ in
     (fetchTarball "https://github.com/nix-community/nixos-vscode-server/tarball/master")
   ];
 
-  services.pipewire = {
-    extraConfig.pipewire.libpipewire-module-rtp-source = {
-      "context.modules" = [
-        {
-          name = "libpipewire-module-rtp-source";
-          args = {
-            "node.description" = "RTP source";
-            "media.name" = "RTP source";
-            "destination.port" = 46013;
-          };
-        }
-      ];
-    };
-  };
-
   services.vscode-server.enable = true;
   services.vscode-server.enableFHS = true;
   networking.useNetworkd = true;
