@@ -37,7 +37,8 @@ eval-config {
           {
             # Enable gui config
             tob.gui.enable = true;
-            lib.npins = npins;
+            # Enable panel specific config
+            tob.panel.enable = true;
           }
         ]
       else
