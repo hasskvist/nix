@@ -13,6 +13,21 @@
     "${npins.nixos-hardware}/common/pc/ssd" # ssd config
   ];
 
+  services.pipewire = {
+    extraConfig.pipewire.libpipewire-module-rtp-sink = {
+      "context.modules" = [
+        {
+          name = "libpipewire-module-rtp-sink";
+          args = {
+            "node.description" = "RTP sink";
+            "media.name" = "RTP sink";
+            "source.port" = 46013;
+          };
+        }
+      ];
+    };
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
