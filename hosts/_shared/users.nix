@@ -1,8 +1,11 @@
 { config, pkgs, ... }:
 let
+  # hashed login password
+  # generate with "mkpasswd -m bcrypt"
   hashedPassword = "$2b$05$UV9X2REQDqC0l6Bul5HMIOZ9SaQldn3NAnS854XE58klpgaYdofga";
 in
 {
+  users.mutableUsers = false;
   users.users = {
     root = {
       inherit hashedPassword;
