@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  npins,
   ...
 }:
 let
@@ -20,7 +21,7 @@ in
     ./spotify.nix
     ./pipewire.nix
     ./packages.nix
-    <home-manager/nixos> # import home-manager, requires home-manager channel
+    (import npins.home-manager {}).nixos
   ];
 
   options.tob = {
