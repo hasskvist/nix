@@ -113,5 +113,7 @@ in
         X11Forwarding = true;
       };
     };
+
+    hardware.flipperzero.enable = true;
   };
 }
