@@ -34,6 +34,9 @@ in
     # Use same nixpkgs instance for home-manager
     home-manager.useGlobalPkgs = true;
 
+    # Install home-manager profiles in /etc/profiles
+    home-manager.useUserPackages = true;
+
     # Don't install the /lib/ld-linux.so.2 stub. This saves one instance of nixpkgs (maybe?)
     environment.ldso32 = null;
 
