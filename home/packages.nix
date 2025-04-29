@@ -24,6 +24,7 @@
       qpwgraph # pipewire patch-bay
       udiskie # GUI tool for udisks2
       nmap # Network scanning tool
+      stremio # Media streaming suite
     ];
   };
 }
