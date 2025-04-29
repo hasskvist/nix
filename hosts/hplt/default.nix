@@ -24,6 +24,8 @@
 
     # Enable esphome to make firmware for ESP32
     services.esphome.enable = true;
+    # Enable iio for screen rotation
+    hardware.sensor.iio.enable = true;
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
